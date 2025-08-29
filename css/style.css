@@ -7,6 +7,10 @@ body {
     background-color: #E5E5E5;
 }
 
+.navbar {
+    z-index: 999 !important;
+}
+
 .navbar-brand{
     font-weight:700 ;
     font-size: 20px;
@@ -31,7 +35,7 @@ body {
 }
 
 .hero-tagline h1 {
-    colour: #fff;
+    color: #fff;
     font-size: 52px;
     line-height: 60px;
 }
@@ -47,14 +51,31 @@ body {
 .button-lg-primary{
     width: 237px;
     height: 70px;
-    background-color: #fff;
-    color: var(--pr-colour);
-    border: none;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
     font-size: 20px;
     font-weight: 700;
+    transition: all .2s ease-in;
 }
-.btn btn-outline-success{
+
+.button-lg-primary:hover{
     background-color: #fff;
+    color: var(--pr-colour);
+}
+
+/* search button */
+.navbar .btn-outline-success {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: all .2s ease-in;
+}
+
+.navbar .btn-outline-success:hover {
+    background-color: #fff;
+    color: var(--pr-colour);
+    border-color: #fff;
 }
 
 /* layanan section */
