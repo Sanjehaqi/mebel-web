@@ -1,0 +1,134 @@
+:root{
+    --pr-colour: #f8c11d;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #E5E5E5;
+}
+
+.navbar-brand{
+    font-weight:700 ;
+    font-size: 20px;
+}
+
+.nav-link{
+    font-size: 16px;
+}
+.nav-link.active{
+    font-weight:700;
+}
+
+/* hero section */
+#hero{
+    background: linear-gradient(160deg, var(--pr-colour),#000);
+    height: 100vh;
+    width: 100%;
+}
+
+.img-hero{
+    height: 100%;
+}
+
+.hero-tagline h1 {
+    colour: #fff;
+    font-size: 52px;
+    line-height: 60px;
+}
+
+.hero-tagline p{
+    font-size: 16px;
+    margin-bottom: 60px;
+    margin-top: 20px;
+    line-height: 30px;
+    width: 90%;
+}
+
+.button-lg-primary{
+    width: 237px;
+    height: 70px;
+    background-color: #fff;
+    color: var(--pr-colour);
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+.btn btn-outline-success{
+    background-color: #fff;
+}
+
+/* layanan section */
+
+#layanan {
+    padding: 100px 0;
+}
+
+h2{
+    font-size: 48px;
+    font-weight: 500;
+    color: #000;
+}
+
+.sub-tittle{
+    font-size: 18px;
+    color: #000;
+}
+
+.card-layanan{
+    width: 360px;
+    height: 313px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 7px 3px, rgba(0, 0, 0, 0.05);
+    transition: all .2s ease-in;
+}
+
+.circle-icon{
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    background-color: var(--pr-colour); 
+    margin-bottom: 15px;
+    transition: all .1s ease-in;
+}
+
+.card-layanan h3{
+    color: var(--pr-colour);
+    font-size: 24px;
+     transition: all .2s ease-in;
+}
+
+.card-layanan p{
+    color: #000;
+    font-size: 16px;
+     transition: all .3s ease-in;
+}
+
+/* hover */
+.card-layanan:hover{
+    width: 360px;
+    height: 313px;
+    border-radius: 5px;
+    background: linear-gradient(160deg, var(--pr-colour), #000);
+    padding: 40px;
+    box-shadow: 0 0 7px 3px, rgba(0, 0, 0, 0.05);
+    transition: all .2s ease-in;
+}
+
+.card-layanan:hover .circle-icon{
+    background-color: #fff;
+    transition: all .1s ease-in;
+}
+
+.card-layanan:hover h3{
+    color: #fff;
+    font-size: 24px;
+    transition: all .2s ease-in;
+}
+
+.card-layanan:hover p{
+    color: #fff;
+    font-size: 16px;
+    transition: all .3s ease-in;
+}
