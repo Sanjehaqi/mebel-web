@@ -64,7 +64,9 @@
         <div class="col-md-6 hero-tagline my-auto">
           <h1>Sentuhan Seni di Setiap Ruang</h1>
           <p>Selamat datang di <span class="fw-bold">BRASEWOOD</span>, tempat di mana kualitas bertemu dengan keindahan desain. Kami percaya furnitur adalah cerminan dari gaya hidup Anda. Temukan koleksi terbaik yang akan mengubah rumah Anda menjadi ruang impian.</p>
-          <button class="button-lg-primary">temukan disini</button>
+          <a href="#search">
+            <button class="button-lg-primary">temukan disini</button>
+          </a>
           <a href="#">
             <img src="Assets/Logo/button arrow.png" alt="" >
           </a>
@@ -114,7 +116,60 @@
     </div>
 </section>
 
+<!-- search section -->
+ <section id="search">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>
+          Temukan Furnitur Impianmu
+        </h2>
+        <p>
+          Sekarang Anda bisa menciptakan rumah yang nyaman dan indah, dengan koleksi furnitur berkualitas yang sesuai dengan gaya hidup Anda.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-10 mx-auto">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Jual" type="button" role="tab" aria-controls="home" aria-selected="true">Jual</button>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#modelbaru" type="button" role="tab" aria-controls="contact" aria-selected="false">Model baru</button>
+      </li>
+      </ul>
+    <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="Jual" role="tabpanel" aria-labelledby="home-tab">
 
+      <!-- dropdown jual -->
+      <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary dropdown-toggle custom-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipe</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+        <button class="btn btn-outline-secondary dropdown-toggle custom-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">Range harga</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <button class="btn btn-primary" type="button">Cari</button>
+      </div>
+        
+    </div>
+    <div class="tab-pane fade" id="modelbaru" role="tabpanel" aria-labelledby="contact-tab">Model baru</div>
+  </div>
+  </div>
+ </section>
+
+    
 
 
     <h1></h1>

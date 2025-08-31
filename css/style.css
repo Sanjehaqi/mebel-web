@@ -1,95 +1,78 @@
-:root{
-    --pr-colour: #f8c11d;
+/* poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #F7F6F2;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: #E5E5E5;
-}
-
-.navbar {
-    z-index: 999 !important;
+/* navbar */
+.navbar{
+    z-index: 3;
 }
 
 .navbar-brand{
-    font-weight:700 ;
+    font-weight: 700;
     font-size: 20px;
 }
 
 .nav-link{
     font-size: 16px;
 }
+
 .nav-link.active{
-    font-weight:700;
-}
-
-/* hero section */
-#hero{
-    background: linear-gradient(160deg, var(--pr-colour),#000);
-    height: 100vh;
-    width: 100%;
-}
-
-.img-hero{
-    height: 100%;
-}
-
-.hero-tagline h1 {
-    color: #fff;
-    font-size: 52px;
-    line-height: 60px;
-}
-
-.hero-tagline p{
-    font-size: 16px;
-    margin-bottom: 60px;
-    margin-top: 20px;
-    line-height: 30px;
-    width: 90%;
+    font-weight: 700;
 }
 
 .button-lg-primary{
     width: 237px;
     height: 70px;
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
+    background-color: #436850;
+    color: white;
+    border: none;
     font-size: 20px;
     font-weight: 700;
-    transition: all .2s ease-in;
 }
 
-.button-lg-primary:hover{
-    background-color: #fff;
-    color: var(--pr-colour);
+/* hero section */
+#hero{
+    background: linear-gradient(180deg, #ADBC9F 0%, rgba(217, 217, 217, 0) 100%);
+    height: 100vh;
+    width: 100%;
 }
 
-/* search button */
-.navbar .btn-outline-success {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    transition: all .2s ease-in;
+.hero-tagline h1{
+    color: #000;
+    font-family: Poppins;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 72px; /* 144% */
 }
 
-.navbar .btn-outline-success:hover {
-    background-color: #fff;
-    color: var(--pr-colour);
-    border-color: #fff;
+.hero-tagline p{
+    font-size: 16px;
+    width: 85%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 30px;
+}
+
+.img-hero{
+    height: 100%;
+    z-index: 1;
 }
 
 /* layanan section */
-
-#layanan {
+#layanan{
     padding: 100px 0;
 }
 
 h2{
     font-size: 48px;
-    font-weight: 500;
-    background: -webkit-linear-gradient(160deg, var(--pr-colour), #3A2A08);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    color: #436850;
 }
 
 .sub-tittle{
@@ -98,60 +81,116 @@ h2{
 }
 
 .card-layanan{
-    width: 360px;
+    width: 100%;
     height: 313px;
     border-radius: 5px;
     background-color: #fff;
     padding: 40px;
-    box-shadow: 0 0 7px 3px, rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
     transition: all .2s ease-in;
 }
 
 .circle-icon{
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%; 
-    background-color: var(--pr-colour); 
-    margin-bottom: 15px;
-    transition: all .1s ease-in;
+    width: 70px;
+    height: 70px;
+    background-color: #436850;
+    border-radius: 50%;
+    transition: all .2s ease-in;
 }
 
 .card-layanan h3{
-    color: var(--pr-colour);
+    color: #436850;
     font-size: 24px;
-     transition: all .2s ease-in;
+    font-weight: 700;
+    transition: all .2s ease-in;
 }
 
 .card-layanan p{
     color: #000;
-    font-size: 16px;
-     transition: all .3s ease-in;
+    font-size: 14px;
+    transition: all .3s ease-in;
 }
 
 /* hover */
 .card-layanan:hover{
-    width: 360px;
+    width: 100%;
     height: 313px;
     border-radius: 5px;
-    background: linear-gradient(160deg, var(--pr-colour), #000);
+    background: linear-gradient(180deg, #436850 0%, #ADBC9F 100%);
     padding: 40px;
-    box-shadow: 0 0 7px 3px, rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
     transition: all .2s ease-in;
 }
 
 .card-layanan:hover .circle-icon{
     background-color: #fff;
-    transition: all .1s ease-in;
+    transition: all .2s ease-in;
 }
 
 .card-layanan:hover h3{
     color: #fff;
     font-size: 24px;
+    font-weight: 700;
     transition: all .2s ease-in;
 }
 
 .card-layanan:hover p{
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     transition: all .3s ease-in;
+}
+
+/* search section */
+#search{
+    background-image: url(../Assets/Logo/green-interior-modern-interior-living-room-style-with-soft-sofa-green-wall-3d-rendering\ 2.png);
+    background-size: cover;
+    height: 100vh;
+}
+
+#search h2{
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 72px;
+    color: #fff;
+}
+
+#search p{
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    color: #fff;
+}
+
+.nav-tabs{
+    border: none;
+}
+
+.nav-tabs .nav-link{
+    background-color: #fff;
+    color: #436850;
+}
+
+.nav-tabs .nav-link.active{
+    background-color: #436850;
+    color: #fff;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+.tab-content{
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-top: none;
+}
+
+#search .container {
+    padding-top: 50px;
+}
+
+.custom-dropdown {
+    min-width: 150px;
 }
