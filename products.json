@@ -1,0 +1,21 @@
+
+[
+  {
+    "id": 1,
+    "name": "Nama Produk 1",
+    "price": "Rp 1.500.000",
+    "image": "Assets/Logo/gambarproduk1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Nama Produk 2",
+    "price": "Rp 2.300.000",
+    "image": "Assets/Logo/gambarproduk2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Nama Produk 3",
+    "price": "Rp 950.000",
+    "image": "Assets/Logo/gambarproduk3.jpg"
+  }
+]

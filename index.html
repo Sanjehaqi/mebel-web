@@ -76,42 +76,16 @@
     </div>
   </section>
 
-<section id="layanan">
+<section id="featured-products" class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2>Layanan Kami</h2>
-                <span class="sub-tittle">Sentuhan Seni di Setiap Ruang</span>
+                <h2>Produk Unggulan</h2>
+                <span class="sub-tittle">Lihat koleksi produk terbaik kami</span>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="card-layanan text-center">
-                    <div class="circle-icon position-relative mx-auto">
-                        <img src="Assets/Logo/house 1.png" alt="Produk Baru Icon" class="position-absolute top-50 start-50 translate-middle" style="max-width: 50%; max-height: 50%;">
-                    </div>
-                    <h3 class="mt-4">Produk Baru</h3>
-                    <p class="mt-3">Temukan produk yang menarik</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-layanan text-center">
-                    <div class="circle-icon position-relative mx-auto">
-                        <img src="Assets/Logo/house 1.png" alt="Produk Baru Icon" class="position-absolute top-50 start-50 translate-middle" style="max-width: 50%; max-height: 50%;">
-                    </div>
-                    <h3 class="mt-4">Produk Baru</h3>
-                    <p class="mt-3">Temukan produk yang menarik</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-layanan text-center">
-                    <div class="circle-icon position-relative mx-auto">
-                        <img src="Assets/Logo/house 1.png" alt="Produk Baru Icon" class="position-absolute top-50 start-50 translate-middle" style="max-width: 50%; max-height: 50%;">
-                    </div>
-                    <h3 class="mt-4">Produk Baru</h3>
-                    <p class="mt-3">Temukan produk yang menarik</p>
-                </div>
-            </div>
+        <div class="row mt-5" id="featured-product-list">
+            <!-- Featured products will be inserted here dynamically -->
         </div>
     </div>
 </section>
@@ -180,11 +154,54 @@
       document.getElementById('searchButton').addEventListener('click', function() {
         const searchInputValue = document.getElementById('searchInput').value;
         if (searchInputValue) {
-          alert('Anda mencari: ' + searchInputValue);
+          window.location.href = `produk.html?search=${searchInputValue}`;
         } else {
           alert('Silakan masukkan kata kunci pencarian.');
         }
       });
+
+      fetch('products.json')
+        .then(response => response.json())
+        .then(products => {
+            // Featured Products
+            const featuredProductList = document.getElementById('featured-product-list');
+            products.slice(0, 3).forEach(product => {
+                const productCard = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                                <p class="card-text">${product.price}</p>
+                                <a href="detail-produk.html?id=${product.id}" class="btn btn-primary" style="background-color: #436850; border-color: #436850;">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                featuredProductList.innerHTML += productCard;
+            });
+
+            // New Models
+            const newModelList = document.getElementById('modelbaru');
+            const newModelContent = document.createElement('div');
+            newModelContent.className = 'row';
+            products.slice(-3).forEach(product => {
+                const productCard = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                                <p class="card-text">${product.price}</p>
+                                <a href="detail-produk.html?id=${product.id}" class="btn btn-primary" style="background-color: #436850; border-color: #436850;">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                newModelContent.innerHTML += productCard;
+            });
+            newModelList.appendChild(newModelContent);
+        });
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

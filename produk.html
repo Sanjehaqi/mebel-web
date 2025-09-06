@@ -66,44 +66,53 @@
                 <span class="sub-tittle">Perabot berkualiti untuk setiap sudut rumah anda</span>
             </div>
         </div>
-        <div class="row">
-            <!-- Product Card 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200.png?text=Produk+1" class="card-img-top" alt="Produk 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Produk 1</h5>
-                        <p class="card-text">Rp 1.500.000</p>
-                        <a href="detail-produk.html" class="btn btn-primary" style="background-color: #436850; border-color: #436850;">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Product Card 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200.png?text=Produk+2" class="card-img-top" alt="Produk 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Produk 2</h5>
-                        <p class="card-text">Rp 2.300.000</p>
-                        <a href="detail-produk.html" class="btn btn-primary" style="background-color: #436850; border-color: #436850;">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Product Card 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200.png?text=Produk+3" class="card-img-top" alt="Produk 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Produk 3</h5>
-                        <p class="card-text">Rp 950.000</p>
-                        <a href="detail-produk.html" class="btn btn-primary" style="background-color: #436850; border-color: #436850;">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more product cards as needed -->
+        <div class="row" id="product-list">
+            <!-- Products will be inserted here dynamically -->
         </div>
     </div>
 </section>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('search');
+
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                let filteredProducts = products;
+                if (searchQuery) {
+                    filteredProducts = products.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+                }
+
+                const productList = document.getElementById('product-list');
+                if (filteredProducts.length > 0) {
+                    filteredProducts.forEach(product => {
+                        const productCard = `
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${product.name}</h5>
+                                        <p class="card-text">${product.price}</p>
+                                        <a href="detail-produk.html?id=${product.id}" class="btn btn-primary" style="background-color: #436850; border-color: #436850;">Lihat Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        productList.innerHTML += productCard;
+                    });
+                } else {
+                    productList.innerHTML = '<p>Produk tidak ditemukan.</p>';
+                }
+            });
+    });
+</script>
 
 <!-- Optional JavaScript; choose one of the two! -->
 
